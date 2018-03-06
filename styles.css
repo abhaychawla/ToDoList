@@ -1,0 +1,48 @@
+.task {
+  display: block;
+  color: #333;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 20px 0 10px;
+  margin: 0 0 10px;
+  border-bottom: 2px solid #333;
+  text-transform: uppercase;
+}
+
+#todo {
+  margin: 20px 0;
+}
+
+.hide {
+  display: none;
+}
+
+li > div > label {
+  cursor: pointer;
+}
+
+.edit {
+  position: absolute;
+  right: 25px;
+  top: 5px;
+}
+
+.delete {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+.edit:hover {
+  cursor: pointer;
+  color: darkblue;
+}
+
+.delete:hover {
+  cursor: pointer;
+  color: red;
+}
+
+ul[id="complete-tasks"] label {
+  text-decoration: line-through;
+}

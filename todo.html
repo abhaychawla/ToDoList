@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="author" content="Abhay Chawla">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title>Todo List</title>
+
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="icon"> <!-- Credits: Nicola Simpson https://www.iconfinder.com/icons/263097/checklist_tasks_to_do_list_icon#size=256 -->
+
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel='stylesheet' href='styles.css'>
+
+    <!-- Font Awesome -->
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="container">
+      <label for="add-task" class="task">Add Task</label>
+      <input type="text" id="add-task" class="form-control" placeholder="What needs to be done?" onkeypress="addOrEditTask(event)" />
+    </div>
+
+    <section id="todo">
+      <div class="container">
+        <span class="task">Todo</span>
+        <span class="font-weight-light font-italic">No tasks to display</span>
+        <ul id="incomplete-tasks" class="list-group">
+          <!-- <li class="list-group-item">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="task-0">
+              <label class="custom-control-label" for="task-0">Task 1</label>
+            </div>
+          </li>
+          <li class="list-group-item">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="task-1">
+                <label class="custom-control-label" for="task-1">Task 2</label>
+              </div>
+            </li> -->
+        </ul>
+        <span class="task">Completed</span>
+        <span class="font-weight-light font-italic">No tasks to display</span>
+        <ul id="complete-tasks" class="list-group">
+          <!-- <li class="list-group-item">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="task-2" checked>
+                <label class="custom-control-label" for="task-2">Task 3</label>
+              </div>
+            </li> -->
+        </ul>
+      </div>
+    </section>
+
+    <script src='todo.js'></script>
+  </body>
+</html>
