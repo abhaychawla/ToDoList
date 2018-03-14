@@ -1,0 +1,38 @@
+<section id="add">
+    <div class="container">
+        <label for="add-task" class="task">Add Task</label>
+        <input type="text" id="add-task" class="form-control" placeholder="What needs to be done?" ng-model="todo.task" ng-keypress="todo.addOrEditTask($event)" />
+
+        <br />
+        <div class="alert alert-success" ng-show="todo.successMessage">{{ todo.successMessage }}</div>
+        <div class="alert alert-danger" ng-show="todo.errorMessage">{{ todo.errorMessage }}</div>
+    </div>
+</section>
+
+<section id="todo">
+    <div class="container">
+        <span class="task">Todo</span>
+        <span class="font-weight-light font-italic" ng-hide="todo.incompleteTasks">No tasks to display</span>
+        <ul id="incomplete-tasks" class="list-group">
+            <li class="list-group-item" ng-repeat="incompleteTask in todo.tasks | orderBy: 'value'" ng-if="!incompleteTask.completed">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="{{ incompleteTask.value }}" ng-model="incompleteTask.completed">
+                    <label class="custom-control-label" for="{{ incompleteTask.value }}">{{ incompleteTask.value }}</label>
+                    <i class="far fa-edit edit" ng-click="todo.editTask(incompleteTask)"></i>
+                    <i class="fas fa-trash-alt delete" ng-click="todo.deleteTask(incompleteTask)"></i>
+                </div>
+            </li>
+        </ul>
+        <span class="task">Completed</span>
+        <span class="font-weight-light font-italic" ng-hide="todo.completeTasks">No tasks to display</span>
+        <ul id="complete-tasks" class="list-group">
+            <li class="list-group-item" ng-repeat="completeTask in todo.tasks | orderBy: 'value'" ng-if="completeTask.completed">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="{{ completeTask.value }}" ng-model="completeTask.completed">
+                    <label class="custom-control-label" for="{{ completeTask.value }}">{{ completeTask.value }}</label>
+                    <i class="fas fa-trash-alt delete" ng-click="todo.deleteTask(completeTask)"></i>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
